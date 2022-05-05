@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #000;
+    color: #FFF;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
