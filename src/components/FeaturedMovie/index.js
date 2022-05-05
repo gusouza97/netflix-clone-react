@@ -1,6 +1,6 @@
 import React from "react";
 import { forwardRef } from "react/cjs/react.production.min";
-import './FeaturedMovie.css';
+import './styles.css';
 
 export default ({item}) => {
     
@@ -27,10 +27,10 @@ export default ({item}) => {
                     </div>
                     <div className="featured--description">{item.overview}</div>
                     <div className="featured--buttons">
-                        <a href={`watch/${item.id}`}>▶ Assistir</a>
-                        <a href={`/list/add/${item.id}`}>+ Minha Lista</a>
+                        <a className="featured--watchbutton" href={`watch/${item.id}`}>▶ Assistir</a>
+                        <a className="featured--mylistbutton" href={`/list/add/${item.id}`}>+ Minha Lista</a>
                     </div>
-                    <div className="featured-genres"><strong>Generos: </strong> {genres.join(', ')}</div>
+                    <div className="featured--genres"><strong>Generos: </strong> {genres.join(', ')}</div>
                 </div>
             </div>
         </section>
