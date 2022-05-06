@@ -39,11 +39,19 @@
     color: #46D369;
 }
 
+.featured--boxDescription{
+    width: 40%;
+}
+
 .featured--description {
     margin-top: 15px;
     font-size: 20px;
     color: #999;
-    max-width: 40%;
+    max-width: 500ch;
+    line-height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
 }
 
 .featured--buttons {
@@ -80,4 +88,17 @@
     margin-top: 15px;
     font-size: 18px;
     color: #999;
+}
+
+@media (max-width: 760px){
+    .featured--boxDescription {
+        width: 80%;
+    }
+
+    .featured--description {
+        color: white;
+    }
+    .movieRow--right {
+        opacity: 1;
+    }
 }

@@ -4,6 +4,7 @@ import MovieRow from './components/MovieRow'
 import Header from './components/Header'
 import FeaturedMovie from './components/FeaturedMovie'
 import './App.css'
+import Loading from './img/Loading.gif'
 
 function App() {
     const [movieList, setMovieList] = useState([])
@@ -14,7 +15,10 @@ function App() {
         const loadAll = async () => {
             // Pegando a lista total
             let list = await Tmdb.getHomeList()
-            setMovieList(list)
+
+            const timer = setTimeout(() => {
+                setMovieList(list)
+            }, 1000)
 
             // Pegando o Featured
             let originals = list.filter(i => i.slug === 'originals');
@@ -57,6 +61,18 @@ function App() {
                     <MovieRow key={key} title={item.title} items={item.items} />
                 ))}
             </section>
+
+            <footer>
+                <p>Desenvolvido por Gustavo Souza</p>
+                <p>Direitos de imagem para Netflix</p>
+                <p>Dados recebidos através da API TMDB.</p>
+            </footer>
+                
+                {movieList.length <= 0 &&
+                <div className='loading'>
+                    <img src={Loading} alt="Carregando"/>
+                </div>
+                }
         </div>
     )
 }
